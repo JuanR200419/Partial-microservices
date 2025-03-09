@@ -1,0 +1,26 @@
+service: partial
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.9
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - httpApi:
+          path: /dick1
+          method: get
+
+
+  hello2:
+    handler: handler.hello2
+    events:
+      - httpApi:
+          path: /dick
+          method: get
+
+
+plugins:
+  - serverless-offline
